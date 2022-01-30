@@ -5,11 +5,11 @@
 #include <vector>
 #include <map>
 #include<fstream>
-#include<stack>
+#include<Stack>
 using namespace std;
 
 #define ErrorCondition -3
-#define NullRule "Encountered Null, popping stack 1 time"
+#define NullRule "Encountered Null, popping Stack 1 time"
 #define ScanError -1
 #define PopError -2
 
@@ -30,7 +30,7 @@ private:
 	map<string, int> productionMap;
 	map <string, int> terminalMap;
 
-	stack<string> stack;
+	stack<string> Stack;
 
 
 
@@ -192,16 +192,19 @@ public:
 	}
 	void DisplayStackStatus()
 	{
-		cout << ".......STACK STATUS......." << endl;
-		while (!stack.empty())
+		stack<string>tempStack = Stack;
+
+		cout << endl;
+		cout << ".......Stack STATUS......." << endl;
+		while (!tempStack.empty())
 		{
-			cout << stack.top()<<"  ";
-			stack.pop();
+			cout << tempStack.top()<<"  ";
+			tempStack.pop();
 		}
 		cout << endl;
-		cout << ".......STACK END......." << endl;
+		cout << ".......Stack END......." << endl;
+		cout << endl;
 	}
-
 	//Helper Functions
 	int DoesTerimnalExist(string key) {
 
@@ -216,45 +219,66 @@ public:
 	int DoesVariableExist(string key) {
 		
 		if (productionMap.find(key) == productionMap.end()) {
-			cerr << "Error : Variable value returned from stack does not exist in productionMap (cfgmap.txt)" << endl;
+			cerr << "Error : Variable value returned from Stack does not exist in productionMap (cfgmap.txt)" << endl;
 			return ErrorCondition;
 		}
 		else {
 			return productionMap[key];
 		}
 	}
-	void HandleScanException(int productionValue) {
+	bool ScanException(bool &scan,int productionValue) {
 		if (productionValue == ScanError) {
 			tokens.erase(tokens.begin());
+			scan = true;
+			return true;
 		}
+		return false;
 	}
-	void HandlePopException(int productionValue) {
+	bool PopException(int productionValue) {
 		if (productionValue == PopError) {
-			stack.pop();
+			Stack.pop();
+			return true;
 		}
+		return false;
 	}
-
-	
+	string GetStackTop(string & key,bool scan) {
+		if (!scan) {
+			key = Stack.top();
+			Stack.pop();
+		}
+		else {
+			scan = false;
+		}
+		return key;
+	}
 	string GetTokenName(Token token) {
 		string x = symbolTable[stoi(token.key)];
-		cout <<"Symbol Table representation : "<< token.value << " : " << x << endl;
+		cout <<"Symbol Table Representation : "<< token.value << ", " << x << endl;
 		//string x = symbolTable.at(24);
 		return x;
 	}
+	void PushProduction(vector<string> production) {
+		for (auto j = production.rbegin(); j != production.rend(); ++j)
+			Stack.push(*j);
+	}
 
-	// Main loop
+	// Main loo
 	void foo() {
 
-		stack.push("$");
-		stack.push("Function");
+		Stack.push("$");
+		Stack.push("Function");
 
 		int productionValue;
+		bool scan = false;
+		string key;
 
-		while (stack.top() != "$") {
+		cout << "Begin Parsing on tokens.txt"<<endl;
+		DisplayStackStatus();
+		while (Stack.top() != "$") {
+			
 
-			// Pop element from stack.
-			string key = stack.top();
-			stack.pop();
+			// Pop element from Stack.
+			key = GetStackTop(key,scan);
 
 			// Check if the popped variable/value is null
 			if (key == "Null") {
@@ -281,23 +305,21 @@ public:
 			if (key == terminal) {
 
 				tokens.erase(tokens.begin());
-				cout << " MATCHED !" << endl;
+				cout << "MATCHED !" << endl;
 			}
 			else {
 				int variableIndex = DoesVariableExist(key);
 				int terminalIndex = DoesTerimnalExist(terminal);
 
 				if (terminalIndex != ErrorCondition) {
-
 					productionValue = parseTable[variableIndex][terminalIndex];
-				
+
+					if (PopException(productionValue) || ScanException(scan,productionValue))
+						continue;
 					cout << "Pushing Production no : "<< productionValue << endl;
 
-					vector<string> s = cfg[productionValue - 1];
-
-					for (auto j = s.rbegin(); j != s.rend(); ++j)
-						stack.push(*j);
-
+					vector<string> production = cfg[productionValue - 1];
+					PushProduction(production);
 					DisplayStackStatus();
 				}
 			}

@@ -17,7 +17,6 @@ void LexerInit(string* fileArgs)
 											//3 . errors.txt (containing errors) 
 }
 
-
 void ParserInit(string* fileArgs) {
 
 	Parser parser;
