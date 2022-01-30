@@ -1,0 +1,7 @@
+0 int
+1 main_
+2 var1_
+3 float
+4 var_a
+5 for
+6 a_

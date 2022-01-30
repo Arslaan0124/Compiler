@@ -1,0 +1,8 @@
+int main_ <int var1_>
+{
+float var1_:
+var_a <> 10:
+for < a_ =< 10.5 : : >:
+{
+}
+}
