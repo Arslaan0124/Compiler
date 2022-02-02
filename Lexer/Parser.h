@@ -13,6 +13,8 @@ using namespace std;
 #define ScanError -1
 #define PopError -2
 
+int lineCount = 1;
+
 
 struct Token {
 	string key;
@@ -37,6 +39,9 @@ private:
 
 public:
 
+	ofstream writer;
+
+
 	vector <Token> tokens;
 	map <int, string> symbolTable;
 
@@ -54,13 +59,15 @@ public:
 		res.push_back(s.substr(pos_start));
 		return res;
 	}
-
 	// Initializer Functions
 	void init(string* files)
 	{
 		this->initCFG(files[0]);
 		this->initParseTable(files[1]);
 		this->initMap(files[2]);
+		this->initTokens(files[3]);
+		this->initSymbolTable(files[4]);
+		this->initTerminalMap(files[5]);
 	}
 	void initCFG(string fileName) {
 
@@ -159,6 +166,9 @@ public:
 
 		reader.close();
 	}
+	void initLog(string fileName) {
+		writer.open(fileName);
+	}
 
 	//Display Functions.
 	void DisplayCFG()
@@ -193,17 +203,33 @@ public:
 	void DisplayStackStatus()
 	{
 		stack<string>tempStack = Stack;
+		string log;
 
 		cout << endl;
-		cout << ".......Stack STATUS......." << endl;
+		writer << endl;
+		cout << "_______________________________"<<lineCount<<"_______________________________" << endl;
+		writer << "_______________________________"<<lineCount++<<"_______________________________" << endl;
+		cout << "_________________________________________________________________" << endl;
+		writer << "_________________________________________________________________" << endl;
+		cout << endl;
+		writer << endl;
+		cout << ".......STACK STATUS......." << endl;
+		writer << ".......STACK STATUS......." << endl;
+		
 		while (!tempStack.empty())
 		{
-			cout << tempStack.top()<<"  ";
+			string s = tempStack.top();
+			cout <<s<<"  ";
+			writer <<s<<"  ";
+			log.append(s+"  ");
 			tempStack.pop();
 		}
 		cout << endl;
+		writer << endl;
 		cout << ".......Stack END......." << endl;
+		writer << ".......Stack END......." << endl;
 		cout << endl;
+		writer << endl;
 	}
 	//Helper Functions
 	int DoesTerimnalExist(string key) {
@@ -253,7 +279,8 @@ public:
 	}
 	string GetTokenName(Token token) {
 		string x = symbolTable[stoi(token.key)];
-		cout <<"Symbol Table Representation : "<< token.value << ", " << x << endl;
+		cout <<"Symbol Table Accessed (token, type) : ("<< token.value << ", " << x <<")"<< endl;
+		writer <<"Symbol Table Accessed (token, type) : ("<< token.value << ", " << x <<")"<< endl;
 		//string x = symbolTable.at(24);
 		return x;
 	}
@@ -262,8 +289,9 @@ public:
 			Stack.push(*j);
 	}
 
-	// Main loo
-	void foo() {
+	// Main loop
+	void parse() {
+		
 
 		Stack.push("$");
 		Stack.push("Function");
@@ -273,6 +301,8 @@ public:
 		string key;
 
 		cout << "Begin Parsing on tokens.txt"<<endl;
+		writer << "Begin Parsing on tokens.txt" << endl;
+
 		DisplayStackStatus();
 		while (Stack.top() != "$") {
 			
@@ -301,11 +331,18 @@ public:
 			else {
 				terminal = token.key;
 			}
-			cout <<"Variable : "<< key << "  " <<"Input : "<< terminal << endl;
+
+			cout <<"Stack top : "<< key  << endl;
+			writer <<"Stack top : "<< key  << endl;
+			cout <<"Input : " << terminal << endl;
+			writer <<"Input : " << terminal << endl;
+
 			if (key == terminal) {
 
 				tokens.erase(tokens.begin());
-				cout << "MATCHED !" << endl;
+				cout << "Action :  MATCHED !" << endl;
+				writer << "Action :  MATCHED !" << endl;
+				DisplayStackStatus();
 			}
 			else {
 				int variableIndex = DoesVariableExist(key);
@@ -313,16 +350,28 @@ public:
 
 				if (terminalIndex != ErrorCondition) {
 					productionValue = parseTable[variableIndex][terminalIndex];
-
+				
 					if (PopException(productionValue) || ScanException(scan,productionValue))
 						continue;
-					cout << "Pushing Production no : "<< productionValue << endl;
+
+					cout << "Action:  Pushing Production No : "<< productionValue << endl;
+					writer << "Action  Pushing Production No : " << productionValue << endl;
 
 					vector<string> production = cfg[productionValue - 1];
 					PushProduction(production);
 					DisplayStackStatus();
 				}
 			}
+		}
+		
+		if (Stack.top() == "$") {
+			cout << "tokens.txt Successfully Parsed." << endl;
+			writer << "tokens.txt Successfully Parsed." << endl;
+			DisplayStackStatus();
+		}
+		else {
+			cout << "Error in Parsing, Couldn't Parse tokens.txt" << endl;
+			writer << "Error in Parsing, Couldn't Parse tokens.txt" << endl;
 		}
 	}
 

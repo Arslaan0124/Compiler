@@ -154,6 +154,7 @@
     <Text Include="map.txt" />
     <Text Include="mapping.txt" />
     <Text Include="Operators.txt" />
+    <Text Include="parselog.txt" />
     <Text Include="parsetable.txt" />
     <Text Include="Punctuation.txt" />
     <Text Include="symbolTable.txt" />

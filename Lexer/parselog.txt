@@ -1,0 +1,959 @@
+Begin Parsing on tokens.txt
+
+_______________________________1_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Function  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, int)
+Stack top : Function
+Input : int
+Action  Pushing Production No : 1
+
+_______________________________2_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Type  identifier  <  ArgList  >  CompoundStmt  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, int)
+Stack top : Type
+Input : int
+Action  Pushing Production No : 7
+
+_______________________________3_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+int  identifier  <  ArgList  >  CompoundStmt  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, int)
+Stack top : int
+Input : int
+Action :  MATCHED !
+
+_______________________________4_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+identifier  <  ArgList  >  CompoundStmt  $  
+.......Stack END.......
+
+Stack top : identifier
+Input : identifier
+Action :  MATCHED !
+
+_______________________________5_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+<  ArgList  >  CompoundStmt  $  
+.......Stack END.......
+
+Stack top : <
+Input : <
+Action :  MATCHED !
+
+_______________________________6_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+ArgList  >  CompoundStmt  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, int)
+Stack top : ArgList
+Input : int
+Action  Pushing Production No : 2
+
+_______________________________7_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Arg  ArgList'  >  CompoundStmt  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, int)
+Stack top : Arg
+Input : int
+Action  Pushing Production No : 5
+
+_______________________________8_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Type  identifier  ArgList'  >  CompoundStmt  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, int)
+Stack top : Type
+Input : int
+Action  Pushing Production No : 7
+
+_______________________________9_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+int  identifier  ArgList'  >  CompoundStmt  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, int)
+Stack top : int
+Input : int
+Action :  MATCHED !
+
+_______________________________10_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+identifier  ArgList'  >  CompoundStmt  $  
+.......Stack END.......
+
+Stack top : identifier
+Input : identifier
+Action :  MATCHED !
+
+_______________________________11_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+ArgList'  >  CompoundStmt  $  
+.......Stack END.......
+
+Stack top : ArgList'
+Input : >
+Action  Pushing Production No : 4
+
+_______________________________12_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  >  CompoundStmt  $  
+.......Stack END.......
+
+Stack top : >
+Input : >
+Action :  MATCHED !
+
+_______________________________13_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+CompoundStmt  $  
+.......Stack END.......
+
+Stack top : CompoundStmt
+Input : {
+Action  Pushing Production No : 26
+
+_______________________________14_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+{  StmtList  }  $  
+.......Stack END.......
+
+Stack top : {
+Input : {
+Action :  MATCHED !
+
+_______________________________15_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+StmtList  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, float)
+Stack top : StmtList
+Input : float
+Action  Pushing Production No : 27
+
+_______________________________16_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+StmtList'  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, float)
+Stack top : StmtList'
+Input : float
+Action  Pushing Production No : 28
+
+_______________________________17_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, float)
+Stack top : Stmt
+Input : float
+Action  Pushing Production No : 17
+
+_______________________________18_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Decleration  StmtList'  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, float)
+Stack top : Decleration
+Input : float
+Action  Pushing Production No : 6
+
+_______________________________19_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Type  IdentList  :  StmtList'  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, float)
+Stack top : Type
+Input : float
+Action  Pushing Production No : 8
+
+_______________________________20_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+float  IdentList  :  StmtList'  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, float)
+Stack top : float
+Input : float
+Action :  MATCHED !
+
+_______________________________21_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+IdentList  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : IdentList
+Input : identifier
+Action  Pushing Production No : 9
+
+_______________________________22_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+identifier  IdentList'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : identifier
+Input : identifier
+Action :  MATCHED !
+
+_______________________________23_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+IdentList'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : IdentList'
+Input : :
+Action  Pushing Production No : 11
+
+_______________________________24_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : :
+Input : :
+Action :  MATCHED !
+
+_______________________________25_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+StmtList'  }  $  
+.......Stack END.......
+
+Stack top : StmtList'
+Input : identifier
+Action  Pushing Production No : 28
+
+_______________________________26_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Stmt
+Input : identifier
+Action  Pushing Production No : 14
+
+_______________________________27_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Expr  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Expr
+Input : identifier
+Action  Pushing Production No : 30
+
+_______________________________28_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Rvalue  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Rvalue
+Input : identifier
+Action  Pushing Production No : 31
+
+_______________________________29_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Mag  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Mag
+Input : identifier
+Action  Pushing Production No : 39
+
+_______________________________30_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Term  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Term
+Input : identifier
+Action  Pushing Production No : 43
+
+_______________________________31_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Factor  Term'  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Factor
+Input : identifier
+Action  Pushing Production No : 48
+
+_______________________________32_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+identifier  Term'  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : identifier
+Input : identifier
+Action :  MATCHED !
+
+_______________________________33_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Term'  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Term'
+Input : <>
+Action  Pushing Production No : 46
+
+_______________________________34_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Mag'
+Input : <>
+Action  Pushing Production No : 42
+
+_______________________________35_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Rvalue'
+Input : <>
+Action  Pushing Production No : 32
+
+_______________________________36_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Compare  Mag  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Compare
+Input : <>
+Action  Pushing Production No : 38
+
+_______________________________37_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+<>  Mag  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : <>
+Input : <>
+Action :  MATCHED !
+
+_______________________________38_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Mag  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Mag
+Input : number
+Action  Pushing Production No : 39
+
+_______________________________39_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Term  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Term
+Input : number
+Action  Pushing Production No : 43
+
+_______________________________40_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Factor  Term'  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Factor
+Input : number
+Action  Pushing Production No : 49
+
+_______________________________41_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+number  Term'  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : number
+Input : number
+Action :  MATCHED !
+
+_______________________________42_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Term'  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Term'
+Input : :
+Action  Pushing Production No : 46
+
+_______________________________43_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  Mag'  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Mag'
+Input : :
+Action  Pushing Production No : 42
+
+_______________________________44_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  Rvalue'  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Rvalue'
+Input : :
+Action  Pushing Production No : 33
+
+_______________________________45_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  :  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : :
+Input : :
+Action :  MATCHED !
+
+_______________________________46_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+StmtList'  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, for)
+Stack top : StmtList'
+Input : for
+Action  Pushing Production No : 28
+
+_______________________________47_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, for)
+Stack top : Stmt
+Input : for
+Action  Pushing Production No : 12
+
+_______________________________48_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+ForStmt  StmtList'  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, for)
+Stack top : ForStmt
+Input : for
+Action  Pushing Production No : 19
+
+_______________________________49_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+for  <  Expr  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Symbol Table Accessed (token, type) : (Keyword, for)
+Stack top : for
+Input : for
+Action :  MATCHED !
+
+_______________________________50_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+<  Expr  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : <
+Input : <
+Action :  MATCHED !
+
+_______________________________51_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Expr  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Expr
+Input : identifier
+Action  Pushing Production No : 30
+
+_______________________________52_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Rvalue  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Rvalue
+Input : identifier
+Action  Pushing Production No : 31
+
+_______________________________53_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Mag  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Mag
+Input : identifier
+Action  Pushing Production No : 39
+
+_______________________________54_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Term  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Term
+Input : identifier
+Action  Pushing Production No : 43
+
+_______________________________55_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Factor  Term'  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Factor
+Input : identifier
+Action  Pushing Production No : 48
+
+_______________________________56_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+identifier  Term'  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : identifier
+Input : identifier
+Action :  MATCHED !
+
+_______________________________57_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Term'  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Term'
+Input : =<
+Action  Pushing Production No : 46
+
+_______________________________58_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Mag'
+Input : =<
+Action  Pushing Production No : 42
+
+_______________________________59_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Rvalue'
+Input : =<
+Action  Pushing Production No : 32
+
+_______________________________60_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Compare  Mag  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Compare
+Input : =<
+Action  Pushing Production No : 35
+
+_______________________________61_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+=<  Mag  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : =<
+Input : =<
+Action :  MATCHED !
+
+_______________________________62_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Mag  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Mag
+Input : number
+Action  Pushing Production No : 39
+
+_______________________________63_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Term  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Term
+Input : number
+Action  Pushing Production No : 43
+
+_______________________________64_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Factor  Term'  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Factor
+Input : number
+Action  Pushing Production No : 49
+
+_______________________________65_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+number  Term'  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : number
+Input : number
+Action :  MATCHED !
+
+_______________________________66_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Term'  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Term'
+Input : :
+Action  Pushing Production No : 46
+
+_______________________________67_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  Mag'  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Mag'
+Input : :
+Action  Pushing Production No : 42
+
+_______________________________68_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  Rvalue'  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Rvalue'
+Input : :
+Action  Pushing Production No : 33
+
+_______________________________69_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  :  OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : :
+Input : :
+Action :  MATCHED !
+
+_______________________________70_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+OptExpr  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : OptExpr
+Input : :
+Action  Pushing Production No : 21
+
+_______________________________71_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  :  OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : :
+Input : :
+Action :  MATCHED !
+
+_______________________________72_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+OptExpr  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : OptExpr
+Input : >
+Action  Pushing Production No : 21
+
+_______________________________73_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  >  Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : >
+Input : >
+Action :  MATCHED !
+
+_______________________________74_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Stmt
+Input : :
+Action  Pushing Production No : 18
+
+_______________________________75_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+:  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : :
+Input : :
+Action :  MATCHED !
+
+_______________________________76_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+StmtList'  }  $  
+.......Stack END.......
+
+Stack top : StmtList'
+Input : {
+Action  Pushing Production No : 28
+
+_______________________________77_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Stmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : Stmt
+Input : {
+Action  Pushing Production No : 16
+
+_______________________________78_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+CompoundStmt  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : CompoundStmt
+Input : {
+Action  Pushing Production No : 26
+
+_______________________________79_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+{  StmtList  }  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : {
+Input : {
+Action :  MATCHED !
+
+_______________________________80_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+StmtList  }  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : StmtList
+Input : }
+Action  Pushing Production No : 27
+
+_______________________________81_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+StmtList'  }  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : StmtList'
+Input : }
+Action  Pushing Production No : 29
+
+_______________________________82_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  }  StmtList'  }  $  
+.......Stack END.......
+
+Stack top : }
+Input : }
+Action :  MATCHED !
+
+_______________________________83_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+StmtList'  }  $  
+.......Stack END.......
+
+Stack top : StmtList'
+Input : }
+Action  Pushing Production No : 29
+
+_______________________________84_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+Null  }  $  
+.......Stack END.......
+
+Stack top : }
+Input : }
+Action :  MATCHED !
+
+_______________________________85_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+$  
+.......Stack END.......
+
+tokens.txt Successfully Parsed.
+
+_______________________________86_______________________________
+_________________________________________________________________
+
+.......STACK STATUS.......
+$  
+.......Stack END.......
+

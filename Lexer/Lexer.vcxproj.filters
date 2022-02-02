@@ -51,6 +51,7 @@
     <Text Include="parsetable.txt" />
     <Text Include="cfgmap.txt" />
     <Text Include="terminals.txt" />
+    <Text Include="parselog.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lexer.h">
